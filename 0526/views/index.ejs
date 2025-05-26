@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <h1><%=title%></h1>
+
+  <h4>Get</h4>
+  <%- include('./getForm') %>
+
+  <h4>Post</h4>
+  <form action="post">
+    <input type="text" placeholder="ID" name="id"> 
+    <input type="password" placeholder="PW" name = "pw">
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>
