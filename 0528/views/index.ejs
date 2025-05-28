@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>회원가입</title>
+</head>
+<body>
+  <h4>get</h4>
+  <%- include('./getForm') %>
+
+  <h4>post</h4>
+  <form action="/postForm" method="post"> 
+    이름 : <input type="text" name="name"><br>
+    성별 : <input type="radio" name="gender" value="male"> 남자
+    <input type="radio" name="gender" value="female"> 여자<br>
+    생년월일 : 
+      <select name="year">
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+      </select>년
+      <select name="month">
+        <% for ( let i=1; i<=12; i++){ %>
+           <option value="<%= i %>"><%= i %></option>
+        <%}%>
+      </select>월
+      <select name="day">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>일<br>
+    관심사 <br>
+      <input type="checkbox" name="interest" value="여행">여행
+      <input type="checkbox" name="interest" value="패션">패션
+      <input type="checkbox" name="interest" value="음식">음식 <br>
+    <button type="submit">회원가입</button>
+  </form> 
+</body>
+</html>

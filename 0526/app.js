@@ -12,6 +12,9 @@ app.set("view engine", "ejs")
 app.set("/views", express.static(__dirname+"/views"))
 app.use("/public", express.static(__dirname+"/public"))
 
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -28,6 +31,11 @@ app.get('/getForm', function(req, res){
     title:"get결과",
     userInfo:req.query
   })
+})
+
+app.post("/postForm", (req, res)=>{
+  console.log(req.body)
+  res.render("result", {title:"post결과", userInfo:req.body})
 })
 
 app.listen(port, () => {
