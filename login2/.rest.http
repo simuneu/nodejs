@@ -1,0 +1,62 @@
+@jwt = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5LCJpYXQiOjE3NDk4MDU2MjksImV4cCI6MTc0OTg0ODgyOX0.yR_D1Qz4dokXNJC5DIsZKa3VeIr4ATZB_SbfsuGik-o
+
+###
+
+GET http://localhost:3000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJob25nIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDk2MzU0ODcsImV4cCI6MTc0OTY0NjI4N30.iV29zDIlu8vSm5aFIXz-ycn1JC1MHjgAfEHlJeU2Zmc
+
+###
+POST http://localhost:3000/sign-up
+Content-Type: application/json
+
+{
+  "email":"test9@gmail.com", 
+  "password":"12341234",
+  "nickname":"lee"
+}
+
+
+###
+POST  http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email":"test7@gmail.com", 
+  "password":"12341234"
+}
+
+
+
+
+
+
+
+###
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "title" :"title~~", 
+  "content":"content~~"
+}
+
+###
+GET http://localhost:3000/posts
+
+###
+GET http://localhost:3000/posts/1
+
+
+###
+PUT http://localhost:3000/posts/1
+Content-Type: application/json
+
+{
+  "title" :"~~title~~", 
+  "content":"~~content~~"
+}
+
+###
+DELETE http://localhost:3000/posts/2
+
